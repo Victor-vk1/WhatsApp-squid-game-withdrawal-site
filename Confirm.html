@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Withdrawal Confirmation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Animated background shapes -->
+  <div class="shape triangle" style="left: 15%; animation-delay: 2s;"></div>
+  <div class="shape square" style="left: 60%; animation-delay: 7s;"></div>
+  <div class="shape circle" style="left: 85%; animation-delay: 12s;"></div>
+
+  <h1>Withdrawal Confirmation</h1>
+  <p id="message"></p>
+  <button onclick="copyMessage()">Copy Message</button>
+  <br><br>
+  <a href="events.html">View Series 2 Events</a>
+
+  <script>
+    let name = localStorage.getItem('playerName') || 'Player';
+    document.getElementById('message').innerHTML =
+      `✅ ${name}, you have received your withdrawal.<br> Screenshot this and head back to the host DM.`;
+
+    function copyMessage() {
+      navigator.clipboard.writeText(
+        `✅ ${name}, you have received your withdrawal. Screenshot this and head back to the host DM.`
+      ).then(() => alert('Message copied!'));
+    }
+  </script>
+</body>
+    </html>
